@@ -5,7 +5,6 @@
   --accent: #8a2be2;
   --light-bg: #1a1a1e;
   --transition: 0.3s;
-  scroll-behavior: smooth;
 }
 [data-theme="light"] {
   --bg: #fff;
@@ -13,6 +12,7 @@
   --light-bg: #f0f0f5;
 }
 * { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
 body {
   font-family: sans-serif;
   background: var(--bg);
@@ -20,26 +20,45 @@ body {
   transition: background var(--transition), color var(--transition);
 }
 .container { width:90%; max-width:1200px; margin:auto; }
-header { background: var(--light-bg); padding:1rem 0; position:sticky; top:0; z-index:100; }
-.nav-container { display:flex; align-items:center; justify-content:space-between; }
+header {
+  position: fixed;
+  top:0; left:0; width:100%;
+  background: var(--light-bg);
+  height:60px;
+  display:flex; align-items:center;
+  z-index:1000;
+}
+.nav-container {
+  display:flex; align-items:center;
+  justify-content:space-between;
+  width:100%;
+  padding:0 1rem;
+}
 .brand { font-size:1.2rem; font-weight:bold; }
 nav ul { list-style:none; display:flex; gap:1rem; }
 nav a { color: var(--fg); text-decoration:none; transition:color var(--transition); }
 nav a:hover { color: var(--accent); }
 #theme-toggle { background:none; border:none; cursor:pointer; font-size:1.2rem; }
+main { margin-top:60px; }
 section { padding:4rem 0; }
-#hero { position:relative; text-align:center; padding-top:2rem; }
-.hero-content { display:flex; align-items:center; gap:2rem; justify-content:center; }
-.profile-pic { width:120px; height:120px; border-radius:50%; border:3px solid var(--accent); }
-.hero-text h1 { font-size:2.5rem; }
-.hero-text p { font-size:1.2rem; margin:0.5rem 0; }
+#hero {
+  position:relative;
+  height:80vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  overflow:hidden;
+}
+.profile-pic { width:120px; height:120px; border-radius:50%; border:3px solid var(--accent); margin-bottom:1rem; }
 .social-links a { margin:0 0.5rem; color: var(--fg); text-decoration:none; }
-.wave { position:absolute; bottom:0; left:0; width:100%; }
+#wave { position:absolute; bottom:0; left:0; width:100%; z-index:-1; }
 .section h2 { text-align:center; font-size:2rem; margin-bottom:2rem; color: var(--accent); }
 /* Expertise */
 .grid-3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:2rem; }
 .card { background: var(--light-bg); padding:1.5rem; border-radius:8px; text-align:center; }
-.card .icon { font-size:2rem; margin-bottom:1rem; color: var(--accent); }
+.icon { font-size:2rem; margin-bottom:1rem; color: var(--accent); }
 /* Skills */
 .skills-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:2rem; }
 .skill-category { background: var(--light-bg); padding:1rem; border-radius:8px; }
@@ -52,10 +71,10 @@ section { padding:4rem 0; }
 .timeline-item { display:flex; width:50%; padding:1rem; position:relative; }
 .timeline-item.left { left:-50%; }
 .timeline-item:not(.left) { left:50%; }
-.timeline-item .dot { position:absolute; top:1rem; left:50%; width:16px; height:16px; background: var(--accent); border-radius:50%; transform:translateX(-50%); }
-.timeline-item .content { background: var(--light-bg); padding:1rem; border-radius:8px; }
-.timeline-item .content h3 { margin-bottom:0.5rem; }
-.timeline-item .content span { font-size:0.9rem; color: var(--fg); margin-bottom:0.5rem; display:block; }
+.dot { position:absolute; top:1rem; left:50%; width:16px; height:16px; background: var(--accent); border-radius:50%; transform:translateX(-50%); }
+.content { background: var(--light-bg); padding:1rem; border-radius:8px; }
+.content h3 { margin-bottom:0.5rem; }
+.content span { font-size:0.9rem; color: var(--fg); margin-bottom:0.5rem; display:block; }
 /* Projects */
 .grid-2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2rem; }
 .project-card { border-radius:8px; overflow:hidden; }
@@ -76,9 +95,9 @@ footer { background: var(--light-bg); padding:2rem 0; text-align:center; }
 .footer-container .social a { margin:0 0.5rem; color: var(--fg); text-decoration:none; }
 /* Responsive */
 @media(max-width:768px) {
-  .hero-content { flex-direction:column; }
+  .nav-container { flex-direction:column; }
   .timeline::before { left:8px; }
   .timeline-item, .timeline-item.left { width:100%; left:0; padding-left:2rem; margin-bottom:2rem; }
-  .timeline-item .content { margin-left:1.5rem; }
+  .content { margin-left:1.5rem; }
 }
 </style>
