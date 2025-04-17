@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+            <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -187,8 +186,8 @@
         }
 
         .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
+            flex-direction: column;
             gap: 3rem;
         }
 
@@ -228,6 +227,17 @@
             bottom: 0;
             left: 50%;
             margin-left: -3px;
+            animation: growLine 2s ease-out forwards;
+            transform-origin: top;
+        }
+
+        @keyframes growLine {
+            0% {
+                transform: scaleY(0);
+            }
+            100% {
+                transform: scaleY(1);
+            }
         }
 
         .timeline-item {
@@ -235,6 +245,18 @@
             position: relative;
             width: 50%;
             box-sizing: border-box;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+
+        .timeline-item.right {
+            transform: translateX(50px);
+        }
+
+        .timeline-item.animate {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         .timeline-item::after {
@@ -247,6 +269,20 @@
             border-radius: 50%;
             top: 15px;
             z-index: 1;
+            transition: all 0.5s ease;
+        }
+
+        .timeline-item.animate::after {
+            animation: pulseCircle 1.5s infinite alternate;
+        }
+
+        @keyframes pulseCircle {
+            0% {
+                box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.4);
+            }
+            100% {
+                box-shadow: 0 0 0 10px rgba(138, 43, 226, 0);
+            }
         }
 
         .left {
@@ -501,6 +537,14 @@
                 left: 0;
                 text-align: left;
             }
+            
+            .timeline-item.right, .timeline-item.left {
+                transform: translateX(-50px);
+            }
+            
+            .timeline-item.animate {
+                transform: translateX(0);
+            }
         }
 
         @media (max-width: 768px) {
@@ -741,7 +785,7 @@
     
         <footer>
             <div class="container">
-                <p class="footer-text">&copy; 2025 Yuji Sato. All rights reserved.</p>
+                <p class="footer-text">&copy; 2025 Mihika Mishra 💻 💜. All rights reserved.</p>
             </div>
         </footer>
     
@@ -765,3 +809,4 @@
     
             // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor
+forEach(anchor
