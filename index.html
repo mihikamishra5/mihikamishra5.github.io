@@ -484,40 +484,42 @@
             padding: 100px 0;
         }
 
-        .education-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            flex-direction: column;
-        }
+        /* Education Section */
+.education-container {
+    display: block; /* Changed from flex to block to stack elements vertically */
+    margin-bottom: 50px; /* Space between education and contact sections */
+}
 
-        .education-card {
-            flex: 0 0 48%;
-            margin: 10px;
-            padding: 30px;
-            background: var(--dark-gray);
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
+.education-card {
+    width: 100%; /* Make each education card take full width */
+    margin: 10px 0; /* Spacing between cards */
+    padding: 30px;
+    background: var(--dark-gray);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
 
-        .education-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
+.education-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
 
-        .education-card h3 {
-            margin-bottom: 10px;
-            color: var(--purple-primary);
-        }
+.education-card h3 {
+    margin-bottom: 10px;
+    color: var(--purple-primary);
+}
 
-        .education-card h4 {
-            margin-bottom: 15px;
-        }
+.education-card h4 {
+    margin-bottom: 15px;
+}
 
-        .education-card p {
-            margin-bottom: 10px;
-            color: #ddd;
-        }
+.education-card p {
+    margin-bottom: 10px;
+    color: #ddd;
+}
+
+
+
 
         /* Contact Section */
         .contact {
@@ -525,74 +527,112 @@
             background-color: var(--dark-gray);
         }
 
-        .contact-container {
-            display: flex;
-            justify-content: space-between;
-            flex-direction: column; /* This will stack the contact items vertically */
-            align-items: center; /* Center the content */
-            
-        }
+        /* Education Section */
+.education-container {
+    display: block; /* Changed from flex to block to stack elements vertically */
+    margin-bottom: 50px; /* Space between education and contact sections */
+}
 
-        .contact-info {
-            flex: 0 0 45%;
-        }
+.education-card {
+    width: 100%; /* Make each education card take full width */
+    margin: 10px 0; /* Spacing between cards */
+    padding: 30px;
+    background: var(--dark-gray);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
 
-        .contact-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
+.education-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
 
-        .contact-info p {
-            margin-bottom: 20px;
-            color: #ddd;
-        }
+.education-card h3 {
+    margin-bottom: 10px;
+    color: var(--purple-primary);
+}
 
-        .contact-details {
-            margin-bottom: 30px;
-        }
+.education-card h4 {
+    margin-bottom: 15px;
+}
 
-        .contact-details div {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
+.education-card p {
+    margin-bottom: 10px;
+    color: #ddd;
+}
 
-        .contact-details i {
-            margin-right: 15px;
-            font-size: 1.2rem;
-            color: var(--purple-primary);
-        }
+/* Contact Section */
+.contact-container {
+    display: block; /* Changed from flex to block to stack elements vertically */
+    align-items: center; /* Center the content */
+}
 
-        .contact-form {
-            flex: 0 0 50%;
-        }
+/* Contact Info */
+.contact-info {
+    width: 100%; /* Make the contact info section take the full width */
+    margin-bottom: 30px; /* Space below contact info */
+}
 
-        .form-group {
-            margin-bottom: 20px;
-        }
+.contact-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
 
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
+.contact-info p {
+    margin-bottom: 20px;
+    color: #ddd;
+}
 
-        .form-control {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 5px;
-            background: var(--black);
-            color: var(--white);
-        }
+.contact-details {
+    margin-bottom: 30px;
+}
 
-        .form-control:focus {
-            outline: 2px solid var(--purple-primary);
-        }
+.contact-details div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
 
-        textarea.form-control {
-            resize: vertical;
-            min-height: 150px;
-        }
+.contact-details i {
+    margin-right: 15px;
+    font-size: 1.2rem;
+    color: var(--purple-primary);
+}
+
+.contact-form {
+    width: 100%; /* Make contact form take full width */
+}
+
+/* Form Fields */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background: var(--black);
+    color: var(--white);
+}
+
+.form-control:focus {
+    outline: 2px solid var(--purple-primary);
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 150px;
+}
+
+
+
 
         /* Footer */
         footer {
